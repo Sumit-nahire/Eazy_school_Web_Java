@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazy School - Best Education for Your Kids</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS (Linked for Spring Boot structure) -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+
+    <style>
+     </style>
+</head>
+<body class="bg-white text-gray-800 transition-colors duration-300">
+
+    <!-- ========================================== -->
+    <!-- HEADER SECTION -->
+    <!-- ========================================== -->
+    <div th:replace="header :: header"></div>
+    
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-bg min-h-[85vh] relative flex items-center px-10 md:px-20 overflow-hidden">
+            <div class="max-w-2xl z-10">
+                <h1 class="text-6xl md:text-7xl font-extrabold leading-tight mb-6">
+                    Your Kids <br> Deserve The <br> <span class="text-gray-900">Best Education</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 font-medium">Active Learning, Expert Teachers & Safe Environment</p>
+                <a th:href="@{/contact}" class="orange-btn px-10 py-4 rounded-full text-lg font-bold shadow-lg">Admission Now</a>
+            </div>
+            <div class="hidden lg:block">
+                <div></div>
+                <img th:src="@{/images/img-4.jpg}" alt="Student" class="absolute right-[10%] bottom-0 h-[85%] z-2 object-cover">
+            </div>
+        </section>
+  <section id="features" class="py-20 px-10 md:px-20 bg-white dark:bg-zinc-950 transition-colors">
+            <div class="text-center mb-16">
+                <p class="uppercase tracking-widest text-orange-400 font-bold mb-2">Best Features</p>
+                <h2 class="text-5xl font-extrabold">Achieve Your Goals With Eazy School</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card text-center p-8 border border-gray-100 rounded-xl hover:shadow-2xl transition group">
+                    <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500 group-hover:text-white transition"><i class="fas fa-users text-2xl"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Expert Teachers</h3>
+                    <p class="text-gray-500 text-sm">Well experienced teachers for each subject.</p>
+                </div>
+                <div class="feature-card text-center p-8 border border-gray-100 rounded-xl hover:shadow-2xl transition group">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 group-hover:text-white transition"><i class="fas fa-book-reader text-2xl"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Quality Education</h3>
+                    <p class="text-gray-500 text-sm">Best curriculum based on international framework.</p>
+                </div>
+                <div class="feature-card text-center p-8 border border-gray-100 rounded-xl hover:shadow-2xl transition group">
+                    <div class="w-16 h-16 bg-yellow-100 text-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-500 group-hover:text-white transition"><i class="fas fa-graduation-cap text-2xl"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Alumni Support</h3>
+                    <p class="text-gray-500 text-sm">Lifetime Alumni support available.</p>
+                </div>
+                <div class="feature-card text-center p-8 border border-gray-100 rounded-xl hover:shadow-2xl transition group">
+                    <div class="w-16 h-16 bg-teal-100 text-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-500 group-hover:text-white transition"><i class="fas fa-university text-2xl"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Best Scholarships</h3>
+                    <p class="text-gray-500 text-sm">Scholarships for low income family students.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="py-20 px-10 md:px-20 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Happy Kids" class="rounded-lg shadow-2xl">
+                <div class="absolute -bottom-10 right-0 bg-white p-6 shadow-xl rounded-lg max-w-xs border-t-4 border-orange-400 text-gray-800" id="appointment-card">
+                    <h4 class="font-bold text-xl mb-2">Get an Appointment Today!</h4>
+                    <p class="text-sm text-gray-500">Call today to know more details</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-5xl font-extrabold mb-8 leading-tight">We Are The Best Choice For Your Child</h2>
+                <p class="text-gray-500 mb-8 text-lg">With over 20 years of experience, best teachers, and world-class infrastructure.</p>
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3 font-semibold"><i class="fas fa-check-circle text-orange-400"></i> Special Education</li>
+                    <li class="flex items-center gap-3 font-semibold"><i class="fas fa-check-circle text-orange-400"></i> 100K+ online courses</li>
+                    <li class="flex items-center gap-3 font-semibold"><i class="fas fa-check-circle text-orange-400"></i> Traditional Academies</li>
+                </ul>
+                <a th:href="@{/contact}" class="orange-btn px-10 py-4 rounded-full text-lg font-bold">Apply Now</a>
+            </div>
+        </section>
+        
+             <section class="py-20 px-10 md:px-20 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h3>Why Choose Us</h3>
+                    <h2 class="text-5xl font-extrabold">Experienced Teachers And Safe Environment</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    
+                    <!-- Expert Teachers -->
+                    <div class="group relative h-[520px] rounded-3xl overflow-hidden shadow-2xl">
+                         <img th:src="@{/images/img-5.jpg}" 
+                             alt="Expert Teachers"
+                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+                        <div class="absolute bottom-12 left-12 text-white">
+                            <h3 class="text-4xl md:text-5xl font-bold leading-tight"><a th:href="@{/about}">Expert Teachers</a></h3>
+                        </div>
+                    </div>
+
+                    <!-- Safe Environment -->
+                    <div class="group relative h-[520px] rounded-3xl overflow-hidden shadow-2xl">
+                        <img th:src="@{/images/img-6.jpg}"  
+                             alt="Safe Environment"
+                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+                        <div class="absolute bottom-12 left-12 text-white">
+                            <h3 class="text-4xl md:text-5xl font-bold leading-tight"><a th:href="@{/about}">Safe Environment</a></h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>    
+
+        <!-- BEST FEATURES SECTION -->
+               <!-- STATISTICS SECTION -->
+        <section class="py-20 bg-gray-50 transition-colors" id="stats-section">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 px-10 md:px-20 text-center">
+                <div class="space-y-4">
+                    <i class="fas fa-users text-4xl text-pink-500"></i>
+                    <h3 class="text-4xl font-extrabold" data-target="2458">3000</h3>
+                    <p class="text-gray-500">Current Students</p>
+                </div>
+                <div class="space-y-4">
+                    <i class="fas fa-school text-4xl text-teal-500"></i>
+                    <h3 class="text-4xl font-extrabold" data-target="12">55</h3>
+                    <p class="text-gray-500">Our Branches</p>
+                </div>
+                <div class="space-y-4">
+                    <i class="fas fa-book-open text-4xl text-orange-400"></i>
+                    <h3 class="text-4xl font-extrabold" data-target="128">40</h3>
+                    <p class="text-gray-500">Total Courses</p>
+                </div>
+                <div class="space-y-4">
+                    <i class="fas fa-award text-4xl text-blue-400"></i>
+                    <h3 class="text-4xl font-extrabold" data-target="543">80</h3>
+                    <p class="text-gray-500">Awards Won</p>
+                </div>
+            </div>
+                <!-- ================================================= -->
+<!-- 🔥 COURSES SECTION (INJECTED AS IT IS) 🔥 -->
+<!-- ================================================= -->
+
+<section class="bg-gray-50 py-20 px-10 md:px-20">
+<section class="bg-gray-50 py-20 px-10 md:px-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+     <h3>BEST COURSES</h3>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Wide Variety of<br>Courses for your Child
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="relative h-64 overflow-hidden">
+          <img th:src="@{/images/img-1.jpg}" class="w-full h-full object-cover">
+           
+          <span class="absolute top-4 left-4 bg-teal-500 text-white text-sm font-semibold px-3 py-1 rounded-md">
+            Education
+          </span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between mb-4">
+            <span class="text-sm">43 Lesson</span>
+            <span class="text-sm">⭐ 4.9</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Educational Programs</h3>
+          <p class="text-gray-600 text-sm">
+            Educations programmes covering core concepts of Maths, English, Science.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="relative h-64 overflow-hidden">
+          <img th:src="@{/images/img-2.jpg}"
+               class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-orange-400 text-white text-sm font-semibold px-3 py-1 rounded-md">
+            Meditation
+          </span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between mb-4">
+            <span class="text-sm">72 Lesson</span>
+            <span class="text-sm">⭐ 4.6</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Best Meditation Classes</h3>
+          <p class="text-gray-600 text-sm">
+            Special program focusing meditation from early age.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="relative h-64 overflow-hidden">
+          <img th:src="@{/images/img-3.jpg}"
+               class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-md">
+            Games
+          </span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between mb-4">
+            <span class="text-sm">14 Lesson</span>
+            <span class="text-sm">⭐ 5.0</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Games Program in a Week</h3>
+          <p class="text-gray-600 text-sm">
+            Games program encouraging children physical activities.
+          </p>
+        </div>
+      </div>
+
+    </div>
+<!-- Browse more courses button (yellow + round shape) -->
+<div class="text-center mt-5">
+  <a th:href="@{/courses}" 
+     class="btn btn-lg px-5 py-3 fw-semibold"
+     style="background:#ffc107;border-color:#ffc107;color:#000;border-radius:9999px;">
+    Browse More Courses
+  </a>
+</div>
+  </div>
+</section>       
+             </section>
+             </section>
+        <!-- CTA SECTION -->
+        <section class="bg-blue-500 py-12 px-10 md:px-20 text-white flex flex-col md:flex-row items-center justify-between">
+            <h2 class="text-3xl font-bold uppercase">Call To Enroll Your Child <br><span class="text-lg font-normal lowercase">Begin the change today!</span></h2>
+            <div class="flex items-center gap-10">
+                <span class="text-2xl font-bold"><i class="fas fa-phone-volume mr-2"></i>+919011516837</span>
+                <a th:href="@{/contact}" class="bg-white text-blue-500 px-8 py-3 rounded-full font-bold">Join for free</a>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- ========================================== -->
+    <!-- FOOTER SECTION -->
+    <!-- ========================================== -->
+    
+    <div th:replace="footer :: footer"></div>
+    <!-- Combined JS Logic -->
+    <script th:src="@{/js/main.js}" src="../static/js/main.js"></script>
+   </body>
+</html>

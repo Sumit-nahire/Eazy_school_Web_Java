@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+
+<body>
+
+<header>
+    <nav class="flex items-center justify-between px-10 py-5 sticky top-0 bg-white z-50 shadow-sm transition-colors duration-300" id="navbar">
+        
+        <div class="flex items-center gap-2">
+            <span class="text-3xl text-orange-400">
+                <i class="fas fa-graduation-cap"></i>
+            </span>
+            <h1 class="text-3xl font-extrabold tracking-tight">
+                Eazy <span class="text-gray-900" id="logo-school">School</span>
+            </h1>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8 font-semibold">
+            <!-- Thymeleaf Links -->
+            <a th:href="@{/}" class="text-orange-400">Home</a>   
+            <a th:href="@{/courses}" class="hover:text-orange-400 transition">Courses</a>
+            <a th:href="@{/contact}" class="hover:text-orange-400 transition">Contact</a>
+
+            <button id="theme-toggle" class="cursor-pointer text-xl">
+                <i class="far fa-moon"></i>
+            </button>
+        </div>
+
+    </nav>
+</header>
+
+</body>
+</html>

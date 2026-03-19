@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazy School - Best Education for Your Kids</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS (Linked for Spring Boot structure) -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+
+    <style>
+        /* Specific hover effects for social icons to match image style */
+        .social-icon {
+            @apply w-8 h-8 flex items-center justify-center rounded text-white text-sm transition-opacity hover:opacity-80;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 transition-colors duration-300">
+
+    <!-- ========================================== -->
+    <!-- HEADER SECTION -->
+    <!-- ========================================== -->
+    <div th:replace="header :: header"></div>
+    
+    <main>  
+        <!-- INNER BANNER SECTION -->
+        <section class="relative bg-cover bg-center h-[300px] flex items-center"
+                th:style="'background-image: url(' + @{/images/img-11.png} + ');'">
+
+            <!-- White Overlay -->
+            <div class="absolute inset-0 bg-white/80"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 px-10 md:px-20">
+                <h1 class="text-5xl font-bold text-black mb-4">About Us</h1>
+
+                <div class="flex items-center space-x-3 text-lg font-medium">
+                    <a th:href="@{/home}" class="text-black hover:text-gray-700">Home</a>
+                    <span class="text-gray-500">›</span>
+                    <a th:href="@{/about}" class="text-gray-500">About Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================= -->
+        <!-- MEET OUR TEACHERS SECTION -->
+        <!-- ================================================= -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+            <h3 class="text-center mb-7">OUR TEAM</h3>
+                <h2 class="text-4xl font-bold text-center mb-12">Meet our Teachers</h2>
+
+                <!-- Teachers Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    
+                    <!-- Teacher 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 flex flex-col items-center">
+                        <div class="bg-gray-50 w-full flex justify-center pt-4">
+                            <img th:src="@{/images/img-8.jpg}" src="https://via.placeholder.com/300x400" alt="Emma Watson" class="h-64 object-contain">
+                        </div>
+                        <div class="p-6 text-center w-full">
+                            <h3 class="text-xl font-bold mb-4">Emma Watson</h3>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#3b5998] text-white rounded"><i class="fab fa-facebook-f text-sm"></i></a>
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#1da1f2] text-white rounded"><i class="fab fa-twitter text-sm"></i></a>
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#ea4335] text-white rounded"><i class="fab fa-google-plus-g text-sm"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 flex flex-col items-center">
+                        <div class="bg-gray-50 w-full flex justify-center pt-4">
+                            <img th:src="@{/images/img-7.jpg}" src="https://via.placeholder.com/300x400" alt="Enrique Lal" class="h-64 object-contain">
+                        </div>
+                        <div class="p-6 text-center w-full">
+                            <h3 class="text-xl font-bold mb-4">Enrique Lal</h3>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#3b5998] text-white rounded"><i class="fab fa-facebook-f text-sm"></i></a>
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#1da1f2] text-white rounded"><i class="fab fa-twitter text-sm"></i></a>
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#ea4335] text-white rounded"><i class="fab fa-google-plus-g text-sm"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 flex flex-col items-center">
+                        <div class="bg-gray-50 w-full flex justify-center pt-4">
+                            <img th:src="@{/images/img-9.png}" src="https://via.placeholder.com/300x400" alt="Smith Ker" class="h-64 object-contain">
+                        </div>
+                        <div class="p-6 text-center w-full">
+                            <h3 class="text-xl font-bold mb-4">Smith Ker</h3>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#3b5998] text-white rounded"><i class="fab fa-facebook-f text-sm"></i></a>
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#1da1f2] text-white rounded"><i class="fab fa-twitter text-sm"></i></a>
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#ea4335] text-white rounded"><i class="fab fa-google-plus-g text-sm"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 flex flex-col items-center">
+                        <div class="bg-gray-50 w-full flex justify-center pt-4">
+                            <img th:src="@{/images/img-10.png}" src="https://via.placeholder.com/300x400" alt="Forkler Lee" class="h-64 object-contain">
+                        </div>
+                        <div class="p-6 text-center w-full">
+                            <h3 class="text-xl font-bold mb-4">Forkler Lee</h3>
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#3b5998] text-white rounded"><i class="fab fa-facebook-f text-sm"></i></a>
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#1da1f2] text-white rounded"><i class="fab fa-twitter text-sm"></i></a>
+                                <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#ea4335] text-white rounded"><i class="fab fa-google-plus-g text-sm"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================= -->
+        <!-- CLEAN & SAFE ENVIRONMENT SECTION (NEWLY ADDED) -->
+        <!-- ================================================= -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">	
+                    
+                    <!-- Left Side: Image -->
+                    <div class="rounded-lg overflow-hidden">
+                        <img th:src="@{/images/img-12.png}" src="https://via.placeholder.com/600x450" alt="Students in masks" class="w-full h-auto object-cover rounded-xl shadow-sm">
+                    </div>
+
+                    <!-- Right Side: Content -->
+                    <div class="space-y-6">
+                        <h5 class="text-gray-600 font-bold uppercase tracking-widest text-sm">Our Environment</h5>
+                        <h2 class="text-5xl font-extrabold text-black leading-tight">
+                            Clean & Safe <br> Environment
+                        </h2>
+                        <p class="text-gray-500 text-lg leading-relaxed max-w-lg">
+                            Eazy School maintains the Safest environment for both teachers and students by sanitizing the schools daily. Enough security is in place with the help of dedicated security team and cameras inside the campus.
+                        </p>
+
+                        <div class="flex items-center space-x-8 pt-4">
+                            <!-- Contact Us Button -->
+                            <a th:href="@{/contact}" class="bg-[#00a2ff] text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-lg transition duration-300">
+                                Contact Us
+                            </a>
+                            
+                            <!-- Learn More Link -->
+                            <a th:href="@{/about}" class="group flex items-center text-black font-bold text-lg hover:text-gray-600 transition duration-300">
+                                Learn More 
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- FOOTER SECTION -->
+    <!-- ========================================== -->
+    <div th:replace="footer :: footer"></div>
+
+    <!-- Combined JS Logic -->
+    <script th:src="@{/js/main.js}" src="../static/js/main.js"></script>
+</body>
+</html>

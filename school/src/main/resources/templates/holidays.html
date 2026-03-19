@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazy School - Holidays</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+</head>
+
+<body class="bg-white text-gray-800">
+
+<!-- HEADER -->
+<div th:replace="~{header :: header}"></div>
+
+<main>
+
+
+<!-- INNER BANNER -->
+
+
+<section class="relative bg-cover bg-center h-[300px] flex items-center"
+        th:style="'background-image: url(' + @{/images/img-11.png} + ');'">
+
+    <div class="absolute inset-0 bg-white/80"></div>
+
+    <div class="relative z-10 px-10 md:px-20">
+
+        <h1 class="text-5xl font-bold text-black mb-4">
+            Holidays
+        </h1>
+
+        <div class="flex items-center space-x-3 text-lg font-medium">
+
+            <a th:href="@{/home}" class="text-black hover:text-gray-700">
+                Home
+            </a>
+
+            <span class="text-gray-500">›</span>
+
+            <span class="text-gray-500">
+                Holidays
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- HOLIDAY SECTION -->
+<!-- ========================= -->
+
+<section class="py-20 bg-gray-50">
+
+    <div class="container mx-auto px-6 lg:px-20">
+
+        <div class="text-center mb-16">
+
+            <p class="text-gray-500 text-lg">
+                Eazy School
+            </p>
+
+            <h2 class="text-5xl font-bold">
+                Awesome Holidays
+            </h2>
+
+        </div>
+
+
+       	 <div class="grid grid-cols-1 md:grid-cols-2 gap-16" th:if="${festival}==true">
+
+
+            <!-- Festival Holidays -->
+
+            <div>
+
+                <h3 class="text-2xl font-bold mb-10 text-yellow-500">
+
+                    <i class="fa-solid fa-gift"></i>
+                    Festival Holidays
+
+                </h3>
+
+                <div class="relative border-l-4 border-yellow-400 pl-8 space-y-12">
+
+                    <div>
+                        <h4 class="text-xl font-semibold">New Year's Day</h4>
+                        <p class="text-yellow-500 text-sm mt-1">
+                            <i class="fa-solid fa-calendar"></i> Jan 1
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-semibold">Halloween</h4>
+                        <p class="text-yellow-500 text-sm mt-1">
+                            <i class="fa-solid fa-calendar"></i> Oct 31
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-semibold">Thanksgiving Day</h4>
+                        <p class="text-yellow-500 text-sm mt-1">
+                            <i class="fa-solid fa-calendar"></i> Nov 24
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-semibold">Christmas</h4>
+                        <p class="text-yellow-500 text-sm mt-1">
+                            <i class="fa-solid fa-calendar"></i> Dec 25
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+			 <div class="grid grid-cols-1 md:grid-cols-2 gap-16" th:if="${federal}==true">
+
+            <!-- Federal Holidays -->
+
+            <div>
+
+                <h3 class="text-2xl font-bold mb-10 text-yellow-500">
+
+                    <i class="fa-solid fa-flag"></i>
+                    Federal Holidays
+
+                </h3>
+
+
+                <div class="relative border-l-4 border-yellow-400 pl-8 space-y-12">
+
+                    <div>
+                        <h4 class="text-xl font-semibold">
+                            Martin Luther King
+                        </h4>
+
+                        <p class="text-yellow-500 text-sm mt-1">
+                            <i class="fa-solid fa-calendar"></i> Jan 17
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <h4 class="text-xl font-semibold">
+                            Independence Day
+                        </h4>
+
+                        <p class="text-yellow-500 text-sm mt-1">
+                            <i class="fa-solid fa-calendar"></i> July 4
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <h4 class="text-xl font-semibold">
+                            Labor Day
+                        </h4>
+
+                        <p class="text-yellow-500 text-sm mt-1">
+                            <i class="fa-solid fa-calendar"></i> Sep 5
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <h4 class="text-xl font-semibold">
+                            Veterans Day
+                        </h4>
+
+                        <p class="text-yellow-500 text-sm mt-1">
+                            <i class="fa-solid fa-calendar"></i> Nov 11
+                        </p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- JS -->
+
+<script th:src="@{/js/main.js}" src="../static/js/main.js"></script>
+
+</body>
+
+</html>
