@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazy School - Dashboard</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="bg-white text-gray-800">
+
+<!-- Header -->
+<div th:replace="~{header :: header}"></div>
+
+<main>
+
+    <!-- Banner -->
+    <section class="relative bg-cover bg-center h-[250px] flex items-center"
+             th:style="'background-image: url(' + @{/images/img-11.png} + ');'">
+
+        <div class="absolute inset-0 bg-white/80"></div>
+
+        <div class="relative z-10 px-10 md:px-20">
+            <h1 class="text-4xl md:text-5xl font-bold text-black mb-4">Dashboard</h1>
+
+            <div class="flex items-center space-x-3 text-lg font-medium">
+                <a th:href="@{/home}" class="text-black hover:text-gray-700">Home</a>
+                <span class="text-gray-500">&gt;</span>
+                <span class="text-gray-500">Dashboard</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="py-16 bg-gray-50 min-h-[400px]">
+
+        <div class="max-w-4xl mx-auto text-center px-6">
+
+            <!-- Welcome -->
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                Welcome - <span th:text="${username}">User</span>
+            </h2>
+
+            <!-- Roles -->
+            <p class="text-gray-600 text-lg mb-8">
+                You logged in as -
+                <span th:text="${roles}">[ROLE_USER]</span>
+            </p>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+
+                <!-- Profile -->
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <i class="fas fa-user text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Profile</h3>
+                    <p class="text-gray-500 text-sm">Manage your account details</p>
+                </div>
+
+                <!-- Courses -->
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <i class="fas fa-book text-3xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Courses</h3>
+                    <p class="text-gray-500 text-sm">View your enrolled courses</p>
+                </div>
+
+                <!-- Settings -->
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <i class="fas fa-cog text-3xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Settings</h3>
+                    <p class="text-gray-500 text-sm">Update preferences</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- Footer -->
+<div th:replace="~{footer :: footer}"></div>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

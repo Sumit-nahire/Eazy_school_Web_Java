@@ -11,134 +11,119 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS (Linked for Spring Boot structure) -->
-    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <!-- ✅ FIXED: Removed wrong static path -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 
-    <style>
-    
-     </style>
 </head>
+
 <body class="bg-white text-gray-800 transition-colors duration-300">
 
-    <!-- ========================================== -->
-    <!-- HEADER SECTION -->
-    <!-- ========================================== -->
-    <div th:replace="header :: header"></div>
+    <!-- HEADER -->
+    <div th:replace="~{header :: header}"></div>
     
     <main>  
-        <!-- BEST FEATURES SECTION -->
-             <!-- ================================================= -->
-<!-- 🔥 COURSES SECTION (INJECTED AS IT IS) 🔥 -->
-<!-- ================================================= -->
-<!-- INNER BANNER SECTION -->
-<section class="relative bg-cover bg-center h-[300px] flex items-center"
-        th:style="'background-image: url(' + @{/images/img-4.jpg} + ');'">
 
-    <!-- White Overlay -->
-    <div class="absolute inset-0 bg-white/80"></div>
+        <!-- INNER BANNER -->
+        <section class="relative bg-cover bg-center h-[300px] flex items-center"
+                th:style="'background-image: url(' + @{/images/img-4.jpg} + ');'">
 
-    <!-- Content -->
-    <div class="relative z-10 px-10 md:px-20">
-        <h1 class="text-5xl font-bold text-black mb-4">Courses</h1>
+            <div class="absolute inset-0 bg-white/80"></div>
 
-        <div class="flex items-center space-x-3 text-lg font-medium">
-            <a th:href="@{/home}" class="text-black hover:text-gray-700">Home</a>
-            <span class="text-gray-500">›</span>
-            <a th:href="@{/courses}" class="text-gray-500">Courses</a>
-        </div>
-    </div>
-</section>
-<section class="bg-gray-50 py-20 px-10 md:px-20">
-<section class="bg-gray-50 py-20 px-10 md:px-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative z-10 px-10 md:px-20">
+                <h1 class="text-5xl font-bold text-black mb-4">Courses</h1>
 
-    <div class="text-center mb-12">
-     <h3>BEST COURSES</h3>
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-        Wide Variety of<br>Courses for your Child
-      </h2>
-    </div>
+                <div class="flex items-center space-x-3 text-lg font-medium">
+                    <a th:href="@{/home}" class="text-black hover:text-gray-700">Home</a>
+                    <span class="text-gray-500">›</span>
+                    <a th:href="@{/courses}" class="text-gray-500">Courses</a>
+                </div>
+            </div>
+        </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- COURSES -->
+        <section class="bg-gray-50 py-20 px-10 md:px-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Card 1 -->
-      <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <div class="relative h-64 overflow-hidden">
-          <img th:src="@{/images/img-1.jpg}" class="w-full h-full object-cover">
-           
-          <span class="absolute top-4 left-4 bg-teal-500 text-white text-sm font-semibold px-3 py-1 rounded-md">
-            Education
-          </span>
-        </div>
-        <div class="p-6">
-          <div class="flex justify-between mb-4">
-            <span class="text-sm">43 Lesson</span>
-            <span class="text-sm">⭐ 4.9</span>
-          </div>
-          <h3 class="text-xl font-bold mb-2">Educational Programs</h3>
-          <p class="text-gray-600 text-sm">
-            Educations programmes covering core concepts of Maths, English, Science.
-          </p>
-        </div>
-      </div>
+                <div class="text-center mb-12">
+                    <h3>BEST COURSES</h3>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Wide Variety of<br>Courses for your Child
+                    </h2>
+                </div>
 
-      <!-- Card 2 -->
-      <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <div class="relative h-64 overflow-hidden">
-          <img th:src="@{/images/img-2.jpg}"
-               class="w-full h-full object-cover">
-          <span class="absolute top-4 left-4 bg-orange-400 text-white text-sm font-semibold px-3 py-1 rounded-md">
-            Meditation
-          </span>
-        </div>
-        <div class="p-6">
-          <div class="flex justify-between mb-4">
-            <span class="text-sm">72 Lesson</span>
-            <span class="text-sm">⭐ 4.6</span>
-          </div>
-          <h3 class="text-xl font-bold mb-2">Best Meditation Classes</h3>
-          <p class="text-gray-600 text-sm">
-            Special program focusing meditation from early age.
-          </p>
-        </div>
-      </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Card 3 -->
-      <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <div class="relative h-64 overflow-hidden">
-          <img th:src="@{/images/img-3.jpg}"
-               class="w-full h-full object-cover">
-          <span class="absolute top-4 left-4 bg-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-md">
-            Games
-          </span>
-        </div>
-        <div class="p-6">
-          <div class="flex justify-between mb-4">
-            <span class="text-sm">14 Lesson</span>
-            <span class="text-sm">⭐ 5.0</span>
-          </div>
-          <h3 class="text-xl font-bold mb-2">Games Program in a Week</h3>
-          <p class="text-gray-600 text-sm">
-            Games program encouraging children physical activities.
-          </p>
-        </div>
-      </div>
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative h-64 overflow-hidden">
+                            <img th:src="@{/images/img-1.jpg}" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-teal-500 text-white text-sm font-semibold px-3 py-1 rounded-md">
+                                Education
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-sm">43 Lesson</span>
+                                <span class="text-sm">⭐ 4.9</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Educational Programs</h3>
+                            <p class="text-gray-600 text-sm">
+                                Educations programmes covering core concepts of Maths, English, Science.
+                            </p>
+                        </div>
+                    </div>
 
-    </div>
-<!-- Browse more courses button (yellow + round shape) -->
-  </div>
-</section>       
-             </section>
-             </section>
-        <!-- CTA SECTION --> 
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative h-64 overflow-hidden">
+                            <img th:src="@{/images/img-2.jpg}" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-orange-400 text-white text-sm font-semibold px-3 py-1 rounded-md">
+                                Meditation
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-sm">72 Lesson</span>
+                                <span class="text-sm">⭐ 4.6</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Best Meditation Classes</h3>
+                            <p class="text-gray-600 text-sm">
+                                Special program focusing meditation from early age.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative h-64 overflow-hidden">
+                            <img th:src="@{/images/img-3.jpg}" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-md">
+                                Games
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-sm">14 Lesson</span>
+                                <span class="text-sm">⭐ 5.0</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Games Program in a Week</h3>
+                            <p class="text-gray-600 text-sm">
+                                Games program encouraging children physical activities.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- ========================================== -->
-    <!-- FOOTER SECTION -->
-    <!-- ========================================== -->
-    
-    <div th:replace="footer :: footer"></div>
-    <!-- Combined JS Logic -->
-    <script th:src="@{/js/main.js}" src="../static/js/main.js"></script>
-   </body>
+    <!-- FOOTER -->
+    <div th:replace="~{footer :: footer}"></div>
+
+    <!-- ✅ FIXED: Removed wrong static path -->
+    <script th:src="@{/js/main.js}"></script>
+
+</body>
 </html>

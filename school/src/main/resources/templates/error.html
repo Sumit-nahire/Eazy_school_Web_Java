@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazy School - Error</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="bg-white text-gray-800 transition-colors duration-300">
+
+<!-- Header -->
+<div th:replace="~{header :: header}"></div>
+
+<main>
+
+    <!-- Banner -->
+    <section class="relative bg-cover bg-center h-[250px] flex items-center"
+             th:style="'background-image: url(' + @{/images/img-11.png} + ');'">
+        <div class="absolute inset-0 bg-white/80"></div>
+        <div class="relative z-10 px-10 md:px-20">
+            <h1 class="text-4xl md:text-5xl font-bold text-black mb-4">Oops...</h1>
+            <div class="flex items-center space-x-3 text-lg font-medium">
+                <a th:href="@{/home}" class="text-black hover:text-gray-700">Home</a>
+                <span class="text-gray-500">&gt;</span>
+                <span class="text-gray-500">Error</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Error Body -->
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+
+            <!-- oops... text -->
+            <h2 class="text-7xl md:text-8xl font-black text-gray-900 tracking-widest mb-6">
+                oops...
+            </h2>
+
+            <!-- Illustration Image -->
+            <div class="w-full flex justify-center mb-8">
+                <img th:src="@{/images/error.png}"
+                     alt="Error Illustration"
+                     class="w-full max-w-2xl object-contain"/>
+            </div>
+
+            <!-- Look like you're lost -->
+            <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">
+                Look like you're lost
+            </h3>
+
+            <!-- Error message -->
+            <p class="text-gray-500 text-sm mb-8">
+                <span th:text="${errorMessage} ?: 'Error Message - It\'s been a bad day!!'">
+                    Error Message - It's been a bad day!!
+                </span>
+            </p>
+
+            <!-- Go to Home Button -->
+            <a th:href="@{/home}"
+               class="inline-block bg-[#007bff] text-white
+                      px-10 py-3 rounded-full font-semibold
+                      hover:bg-blue-600 transition shadow-md">
+                Go to Home
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<div th:replace="~{footer :: footer}"></div>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package com.eazyscholl.school.controller;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
@@ -13,14 +12,14 @@ import com.eazyscholl.school.model.Holiday;
 
 @Controller
 public class HolidaysController {
-     @GetMapping("/holidays") 
+     @GetMapping("/holidays")
 	 public String displayHolidays(@RequestParam(required = false) Boolean festival,
 			                      @RequestParam(required =  false) Boolean federal, Model model) {
-		 
+
     	 model.addAttribute("festival",festival);
     	 model.addAttribute("federal",federal);
-    	 
-    	 
+
+
 		 List<Holiday> holidays = Arrays.asList(
 		 new Holiday("Jan 1", "New Year's Day", Holiday.Type.FESTIVAL ),
 		 new Holiday("Oct 31","Halloween",Holiday.Type.FESTIVAL),
@@ -31,12 +30,12 @@ public class HolidaysController {
 		 new Holiday("Sep 5","Labor Day",Holiday.Type.FEDERAL),
 		 new Holiday("Nov 11","Veterans Day",Holiday.Type.FEDERAL)
 		 );
-		 
+
 		 Holiday.Type[] types = Holiday.Type.values();
 		 for(Holiday.Type type : types) {
 			 model.addAttribute(type.toString(),
 					 (holidays.stream().filter(holiday->holiday.getType().equals(type)).collect(Collectors.toList())));
 		 }
 		 return "holidays.html";
-	 }	
+	 }
 }

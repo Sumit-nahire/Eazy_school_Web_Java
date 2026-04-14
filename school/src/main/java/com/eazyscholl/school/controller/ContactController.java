@@ -1,32 +1,26 @@
 package com.eazyscholl.school.controller;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.ui.Model;
-import org.springframework.web.servlet.ModelAndView;
+
 import com.eazyscholl.school.model.Contact;
 import com.eazyscholl.school.service.ContactService;
 
-
-
 import jakarta.validation.Valid;
-
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Controller
 public class ContactController {
-		
+
 	private final ContactService contactService;
-	
+
 	public ContactController(ContactService contactService) {
 		this.contactService = contactService;
 	}
-	
+
 		@RequestMapping("/contact")
         public String displayContactPage(org.springframework.ui.Model model) {
 			model.addAttribute("contact", new Contact());
@@ -49,9 +43,9 @@ public class ContactController {
 //
 //		        return new ModelAndView("redirect:/contact");
 
-	@RequestMapping(value="/saveMsg", method = RequestMethod.POST)	
+	@RequestMapping(value="/saveMsg", method = RequestMethod.POST)
     public String saveMessage(@Valid @ModelAttribute("contact") Contact contact,Errors errors ) {
-    	
+
 		if(errors.hasErrors()) {
 		      log.error("Contact form Validation failed due to :"+ errors.toString());
 		      return "contact";
@@ -60,11 +54,11 @@ public class ContactController {
 		    contactService.setCounter(contactService.getCounter()+1);
 		    log.info("Number of times Contact form is submitted:" +contactService.getCounter());
     	return "redirect:/contact";
-    	   
-         }
-		
-    }
-	
 
-	
+         }
+
+    }
+
+
+
 

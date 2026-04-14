@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazy School - Login</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="bg-white text-gray-800 transition-colors duration-300">
+
+<!-- Header -->
+<div th:replace="~{header :: header}"></div>
+
+<main>
+
+    <!-- Banner -->
+    <section class="relative bg-cover bg-center h-[250px] flex items-center"
+             th:style="'background-image: url(' + @{/images/img-11.png} + ');'">
+        <div class="absolute inset-0 bg-white/80"></div>
+
+        <div class="relative z-10 px-10 md:px-20">
+            <h1 class="text-4xl md:text-5xl font-bold text-black mb-4">LogIn</h1>
+            <div class="flex items-center space-x-3 text-lg font-medium">
+                <a th:href="@{/home}" class="text-black hover:text-gray-700">Home</a>
+                <span class="text-gray-500">&gt;</span>
+                <span class="text-gray-500">LogIn</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="py-16 bg-white">
+        <div class="max-w-md mx-auto px-6">
+
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-8">LogIn</h2>
+
+            <!-- Error Message -->
+            <div th:if="${errorMessage}"
+                 class="mb-4 rounded bg-red-100 text-red-700 px-4 py-3 text-sm">
+                <span th:text="${errorMessage}"></span>
+            </div>
+
+            <form th:action="@{/login}" method="post">
+
+                <!-- CSRF token (fixed) -->
+                <input type="hidden"
+                       th:if="${_csrf != null}"
+                       th:name="${_csrf.parameterName}"
+                       th:value="${_csrf.token}"/>
+
+                <!-- Username -->
+                <div class="mb-4">
+                    <input type="text" name="username" placeholder="Username" required
+                           class="w-full bg-gray-100 border-none rounded-lg p-4
+                                  focus:ring-2 focus:ring-blue-400 outline-none text-gray-700"/>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-6">
+                    <input type="password" name="password" placeholder="Password" required
+                           class="w-full bg-gray-100 border-none rounded-lg p-4
+                                  focus:ring-2 focus:ring-blue-400 outline-none text-gray-700"/>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center justify-between">
+                    <button type="submit"
+                            class="bg-[#007bff] text-white px-10 py-3 rounded-full font-semibold
+                                   hover:bg-blue-600 transition shadow">
+                        Log In
+                    </button>
+
+                    <a th:href="@{/register}"
+                       class="text-blue-600 hover:underline text-sm">
+                        New User ?
+                    </a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<div th:replace="~{footer :: footer}"></div>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
